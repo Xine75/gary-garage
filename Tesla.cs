@@ -9,6 +9,12 @@ namespace garygarage
         {
             // method definition omitted
         }
+        public override void Drive()
+        {
+            base.Drive();
+            Console.WriteLine();
+        }
+
     }
 
 
