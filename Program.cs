@@ -32,12 +32,34 @@ namespace garygarage
                 MainColor = "Silver",
                 MaximumOccupancy = "six"
             };
+            Cessna fairy = new Cessna()
+            {
+                MainColor = "White",
+                MaximumOccupancy = "two"
+            };
 
             fxs.Drive();
+            fxs.Turn("left");
+            fxs.Stop("the woman inside");
+
             snx.Drive();
+            snx.Turn("right");
+            snx.Stop("a drag queen");
+
+
             modelS.Drive();
+            modelS.Turn("left");
+            modelS.Stop("Ron Howie");
+
             mx410.Drive();
+            mx410.Turn("down");
+            mx410.Stop("Big Bird");
+
             f150.Drive();
+            f150.Turn("right");
+            f150.Stop("a horse");
+
+
         }
     }
 }
