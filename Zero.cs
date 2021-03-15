@@ -3,13 +3,14 @@ using System;
 namespace garygarage
 {
 
-    public class Zero : Vehicle  // Electric motorcycle
+    public class Zero : Vehicle, IElectric  // Electric motorcycle
     {
         public double BatteryKWh { get; set; }
+        public int CurrentChargePercentage { get; set; }
 
         public void ChargeBattery()
         {
-            // method definition omitted
+            Console.WriteLine("Charging the battery!");
         }
         public override void Drive()
         {

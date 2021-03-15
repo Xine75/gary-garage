@@ -2,12 +2,13 @@ using System;
 
 namespace garygarage
 {
-    public class Cessna : Vehicle  // Propellor light aircraft
+    public class Cessna : Vehicle, IGas  // Propellor light aircraft
     {
         public double FuelCapacity { get; set; }
+        public int CurrentTankPercentage { get; set; }
         public void RefuelTank()
         {
-            // method definition omitted
+            Console.WriteLine("The tank is filling up!");
         }
         public override void Drive()
         {

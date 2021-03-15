@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace garygarage
 {
@@ -6,37 +7,40 @@ namespace garygarage
     {
         static void Main(string[] args)
         {
+            //Inheritance
+
             Zero fxs = new Zero()
             {
                 MainColor = "Midnight Blue",
-                MaximumOccupancy = "four"
+                MaximumOccupancy = "four",
+                CurrentChargePercentage = 40,
             };
             Zero snx = new Zero()
             {
                 MainColor = "Black",
-                MaximumOccupancy = "four"
+                MaximumOccupancy = "four",
+                CurrentChargePercentage = 56,
             };
 
             Tesla modelS = new Tesla()
             {
                 MainColor = "Burgandy",
-                MaximumOccupancy = "six"
+                MaximumOccupancy = "six",
+                CurrentChargePercentage = 72,
             };
             Cessna mx410 = new Cessna()
             {
                 MainColor = "White",
-                MaximumOccupancy = "two"
+                MaximumOccupancy = "two",
+                CurrentTankPercentage = 88,
             };
             Ram f150 = new Ram()
             {
                 MainColor = "Silver",
-                MaximumOccupancy = "six"
+                MaximumOccupancy = "six",
+                CurrentTankPercentage = 27,
             };
-            Cessna fairy = new Cessna()
-            {
-                MainColor = "White",
-                MaximumOccupancy = "two"
-            };
+
 
             fxs.Drive();
             fxs.Turn("left");
@@ -59,7 +63,56 @@ namespace garygarage
             f150.Turn("right");
             f150.Stop("a horse");
 
+            //Interfaces
+
+            List<IElectric> electricVehicles = new List<IElectric>() {
+                fxs, snx, modelS
+              };
+
+            Console.WriteLine("Electric Vehicles");
+            foreach (IElectric ev in electricVehicles)
+            {
+                Console.WriteLine($"{ev.CurrentChargePercentage}");
+            }
+
+            foreach (IElectric ev in electricVehicles)
+            {
+                // This should charge the vehicle to 100%
+                ev.ChargeBattery();
+            }
+
+            foreach (IElectric ev in electricVehicles)
+            {
+                Console.WriteLine($"{ev.CurrentChargePercentage}");
+            }
+
+            /***********************************************/
+
+
+            List<IGas> gasVehicles = new List<IGas>() {
+                f150, mx410
+              };
+
+            Console.WriteLine("Gas Vehicles");
+            foreach (IGas gv in gasVehicles)
+            {
+                Console.WriteLine($"{gv.CurrentTankPercentage}");
+            }
+
+            foreach (IGas gv in gasVehicles)
+            {
+                // This should completely refuel the gas tank
+                gv.RefuelTank();
+            }
+
+            foreach (IGas gv in gasVehicles)
+            {
+                Console.WriteLine($"{gv.CurrentTankPercentage}");
+            }
+
+
 
         }
+
     }
 }
