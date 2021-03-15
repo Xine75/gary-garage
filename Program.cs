@@ -72,7 +72,7 @@ namespace garygarage
             Console.WriteLine("Electric Vehicles");
             foreach (IElectric ev in electricVehicles)
             {
-                Console.WriteLine($"{ev.CurrentChargePercentage}");
+                Console.WriteLine($"The {ev.GetType().Name} is currently {ev.CurrentChargePercentage}% full");
             }
 
             foreach (IElectric ev in electricVehicles)
@@ -83,7 +83,7 @@ namespace garygarage
 
             foreach (IElectric ev in electricVehicles)
             {
-                Console.WriteLine($"{ev.CurrentChargePercentage}");
+                Console.WriteLine($"The {ev.GetType().Name} is now {ev.CurrentChargePercentage}% full");
             }
 
             /***********************************************/
@@ -96,7 +96,7 @@ namespace garygarage
             Console.WriteLine("Gas Vehicles");
             foreach (IGas gv in gasVehicles)
             {
-                Console.WriteLine($"{gv.CurrentTankPercentage}");
+                Console.WriteLine($"The {gv.GetType().Name} is currently {gv.CurrentTankPercentage}% full");
             }
 
             foreach (IGas gv in gasVehicles)
@@ -107,7 +107,7 @@ namespace garygarage
 
             foreach (IGas gv in gasVehicles)
             {
-                Console.WriteLine($"{gv.CurrentTankPercentage}");
+                Console.WriteLine($"The {gv.GetType().Name} is now {gv.CurrentTankPercentage}% full");
             }
 
 
