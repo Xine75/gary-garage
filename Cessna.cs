@@ -9,6 +9,8 @@ namespace garygarage
         public void RefuelTank()
         {
             Console.WriteLine("The tank is filling up!");
+            CurrentTankPercentage = 100;
+
         }
         public override void Drive()
         {
