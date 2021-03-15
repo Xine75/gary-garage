@@ -2,13 +2,14 @@ using System;
 
 namespace garygarage
 {
-    public class Ram : Vehicle  // Gas powered truck
+    public class Ram : Vehicle, IGas  // Gas powered truck
     {
         public double FuelCapacity { get; set; }
+        public int CurrentTankPercentage { get; set; }
 
         public void RefuelTank()
         {
-            // method definition omitted
+            Console.WriteLine("The tank is filling up!");
         }
         public override void Drive()
         {
